@@ -8,6 +8,16 @@ declare const pdfMake: any;
 
 type GameState = "menu" | "prologue" | "welcome" | "phase" | "feedback" | "results";
 
+// Mapeamento de imagens dos talentos
+const talentImages: Record<string, string> = {
+  "Reflexão": "/talento-raciocinio.png",
+  "Invenção": "/talento-invencao.png",
+  "Discernimento": "/talento-discernimento.png",
+  "Arrebatamento": "/talento-arrebatamento.png",
+  "Facilitação": "/talento-facilitacao.png",
+  "Tenacidade": "/talento-tenacidade.png",
+};
+
 // Mapeamento de cenários com personagens integrados por fase
 // Fase 1-3: Dra. Flávia (Cível, Trabalhista, Previdenciário)
 // Fase 4: Dra. Leandra (Controladoria)
@@ -494,6 +504,19 @@ export default function Game() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             {resultsData.geniuses.map((genius, index) => (
               <div key={index} className="talent-item" style={{ gridColumn: index === 0 ? '1' : '2' }}>
+                {talentImages[genius.name] && (
+                  <div style={{ textAlign: 'center', marginBottom: '15px' }}>
+                    <img 
+                      src={talentImages[genius.name]} 
+                      alt={genius.name}
+                      style={{ 
+                        maxWidth: '200px', 
+                        height: 'auto',
+                        borderRadius: '8px'
+                      }}
+                    />
+                  </div>
+                )}
                 <div className="talent-name">
                   {genius.name}
                 </div>

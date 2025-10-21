@@ -448,7 +448,7 @@ export const appRouter = router({
         
         try {
           await execAsync(
-            `python3.11 /home/ubuntu/rfeitosa-talento-game/server/generate_pdf.py '${jsonData}' '${outputPath}'`
+            `python3 server/generate_pdf.py '${jsonData}' '${outputPath}'`
           );
 
           // Ler PDF gerado
