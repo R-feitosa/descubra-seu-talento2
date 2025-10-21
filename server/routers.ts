@@ -477,20 +477,26 @@ export const appRouter = router({
         traineeId: z.string(),
       }))
       .mutation(async ({ input }) => {
+        console.log("[Google Sheets] Iniciando envio para traineeId:", input.traineeId);
+        
         const result = await getResult(input.traineeId);
         if (!result) {
+          console.error("[Google Sheets] Resultado não encontrado para traineeId:", input.traineeId);
           throw new Error("Resultado não encontrado");
         }
 
         const trainee = await getTrainee(input.traineeId);
         if (!trainee) {
+          console.error("[Google Sheets] Trainee não encontrado para traineeId:", input.traineeId);
           throw new Error("Trainee não encontrado");
         }
 
         // URL do Google Apps Script (configurar via variável de ambiente)
         const sheetsUrl = process.env.GOOGLE_SHEETS_URL;
+        console.log("[Google Sheets] URL configurada:", sheetsUrl ? "SIM" : "NÃO");
+        
         if (!sheetsUrl) {
-          console.warn("GOOGLE_SHEETS_URL não configurada. Pulando envio para Google Sheets.");
+          console.warn("[Google Sheets] GOOGLE_SHEETS_URL não configurada. Pulando envio.");
           return { success: false, message: "Google Sheets não configurado" };
         }
 
@@ -509,7 +515,11 @@ export const appRouter = router({
           tendency: result.dominantTendency,
         };
 
+        console.log("[Google Sheets] Dados preparados:", JSON.stringify(sheetData));
+
         try {
+          console.log("[Google Sheets] Enviando para:", sheetsUrl);
+          
           const response = await fetch(sheetsUrl, {
             method: 'POST',
             headers: {
@@ -518,17 +528,20 @@ export const appRouter = router({
             body: JSON.stringify(sheetData),
           });
 
+          console.log("[Google Sheets] Status da resposta:", response.status);
+          
           const responseData = await response.json();
+          console.log("[Google Sheets] Resposta:", JSON.stringify(responseData));
           
           if (responseData.success) {
-            console.log("Dados enviados para Google Sheets com sucesso!");
+            console.log("[Google Sheets] ✅ Dados enviados com sucesso!");
             return { success: true, message: "Dados enviados com sucesso" };
           } else {
-            console.error("Erro ao enviar para Google Sheets:", responseData.error);
+            console.error("[Google Sheets] ❌ Erro na resposta:", responseData.error);
             return { success: false, message: responseData.error };
           }
         } catch (error: any) {
-          console.error("Erro ao enviar para Google Sheets:", error);
+          console.error("[Google Sheets] ❌ Erro ao enviar:", error.message);
           return { success: false, message: error.message };
         }
       }),
