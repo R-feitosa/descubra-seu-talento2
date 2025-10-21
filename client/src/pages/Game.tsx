@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 import "../modern-theme.css";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+
+// pdfMake é carregado via CDN no index.html
+// @ts-ignore
+declare const pdfMake: any;
 
 type GameState = "menu" | "prologue" | "welcome" | "phase" | "feedback" | "results";
 
@@ -138,7 +140,6 @@ export default function Game() {
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: {
-          font: 'Helvetica',
           fontSize: 11,
           lineHeight: 1.4
         },
@@ -609,11 +610,13 @@ export default function Game() {
                     alt={genius.name}
                   />
                 )}
-                <div className="talent-name">
-                  {genius.name}
-                </div>
-                <div className="talent-description" style={{ textAlign: 'justify' }}>
-                  {genius.detailedDescription || genius.description}
+                <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+                  <div className="talent-name" style={{ textAlign: 'center' }}>
+                    {genius.name}
+                  </div>
+                  <div className="talent-description" style={{ textAlign: 'justify' }}>
+                    {genius.detailedDescription || genius.description}
+                  </div>
                 </div>
               </div>
             ))}
