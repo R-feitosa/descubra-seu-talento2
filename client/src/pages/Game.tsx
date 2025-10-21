@@ -135,11 +135,24 @@ export default function Game() {
       const talent1Image = await imageToBase64(talentImages[resultsData.geniuses[0].name]);
       const talent2Image = await imageToBase64(talentImages[resultsData.geniuses[1].name]);
 
+      // Configurar fontes do pdfMake
+      if (pdfMake.vfs) {
+        pdfMake.fonts = {
+          Roboto: {
+            normal: 'Roboto-Regular.ttf',
+            bold: 'Roboto-Medium.ttf',
+            italics: 'Roboto-Italic.ttf',
+            bolditalics: 'Roboto-MediumItalic.ttf'
+          }
+        };
+      }
+
       // Definir documento PDF
       const docDefinition: any = {
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: {
+          font: 'Roboto',
           fontSize: 11,
           lineHeight: 1.4
         },
