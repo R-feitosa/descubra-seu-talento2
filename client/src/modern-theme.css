@@ -410,6 +410,8 @@ body {
   max-width: 200px;
   height: auto;
   border-radius: 8px;
+  background-color: white;
+  padding: 10px;
 }
 
 .talent-name {
