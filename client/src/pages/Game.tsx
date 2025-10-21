@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 import "../modern-theme.css";
-
-// pdfMake é carregado via CDN no index.html
-// @ts-ignore
-declare const pdfMake: any;
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 type GameState = "menu" | "prologue" | "welcome" | "phase" | "feedback" | "results";
 
@@ -114,39 +112,52 @@ export default function Game() {
     }
   };
 
+  const resultsRef = useRef<HTMLDivElement>(null);
+
   const handleDownloadPDF = async () => {
-    if (!resultsData || !traineeId) return;
+    if (!resultsData || !resultsRef.current) return;
     
     try {
-      console.log('Gerando PDF via backend...');
+      // Mostrar mensagem de carregamento
+      const loadingDiv = document.createElement('div');
+      loadingDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 9999; text-align: center; font-family: Quicksand, sans-serif;';
+      loadingDiv.innerHTML = '<div style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Gerando PDF...</div><div style="font-size: 14px; color: #666;">Por favor, aguarde</div>';
+      document.body.appendChild(loadingDiv);
+
+      // Capturar o elemento como canvas
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#f5f1e8'
+      });
+
+      // Converter canvas para imagem
+      const imgData = canvas.toDataURL('image/png');
       
-      // Chamar endpoint backend para gerar PDF
-      const response = await generatePdfMutation.mutateAsync({ traineeId });
+      // Criar PDF
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      // Calcular dimensões para caber na página
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 10;
+
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
       
-      if (response.success && response.pdf) {
-        // Converter base64 para blob e baixar
-        const byteCharacters = atob(response.pdf);
-        const byteNumbers = new Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-          byteNumbers[i] = byteCharacters.charCodeAt(i);
-        }
-        const byteArray = new Uint8Array(byteNumbers);
-        const blob = new Blob([byteArray], { type: 'application/pdf' });
-        
-        // Criar link de download
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = response.filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        
-        console.log('PDF baixado com sucesso!');
-      } else {
-        throw new Error('Falha ao gerar PDF');
-      }
+      // Salvar PDF
+      pdf.save(`Relatorio_Talentos_${name.replace(/\s+/g, '_')}.pdf`);
+      
+      // Remover mensagem de carregamento
+      document.body.removeChild(loadingDiv);
     } catch (error: any) {
       console.error('Erro ao gerar PDF:', error);
       alert(`Erro ao gerar PDF: ${error.message || 'Tente novamente'}`);
@@ -491,7 +502,7 @@ export default function Game() {
     }
 
     return (
-      <div className="results-container fade-in">
+      <div className="results-container fade-in" ref={resultsRef}>
         <h2 className="results-title">Seus Resultados</h2>
         
         <div className="result-card">
