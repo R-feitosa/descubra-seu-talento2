@@ -115,49 +115,137 @@ export default function Game() {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleDownloadPDF = async () => {
-    if (!resultsData || !resultsRef.current) return;
+    if (!resultsData) return;
     
     try {
-      // Mostrar mensagem de carregamento
-      const loadingDiv = document.createElement('div');
-      loadingDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 9999; text-align: center; font-family: Quicksand, sans-serif;';
-      loadingDiv.innerHTML = '<div style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Gerando PDF...</div><div style="font-size: 14px; color: #666;">Por favor, aguarde</div>';
-      document.body.appendChild(loadingDiv);
+      // Converter imagens para base64
+      const imageToBase64 = async (url: string): Promise<string> => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.readAsDataURL(blob);
+        });
+      };
 
-      // Capturar o elemento como canvas
-      const canvas = await html2canvas(resultsRef.current, {
-        scale: 2,
-        useCORS: true,
-        logging: false,
-        backgroundColor: '#f5f1e8'
-      });
+      // Carregar imagens dos talentos
+      const talent1Image = await imageToBase64(talentImages[resultsData.geniuses[0].name]);
+      const talent2Image = await imageToBase64(talentImages[resultsData.geniuses[1].name]);
 
-      // Converter canvas para imagem
-      const imgData = canvas.toDataURL('image/png');
-      
-      // Criar PDF
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4'
-      });
+      // Definir documento PDF
+      const docDefinition: any = {
+        pageSize: 'A4',
+        pageMargins: [40, 60, 40, 60],
+        defaultStyle: {
+          font: 'Helvetica',
+          fontSize: 11,
+          lineHeight: 1.4
+        },
+        content: [
+          // Página 1 - Capa
+          {
+            text: 'Talentos\nProfissionais',
+            fontSize: 48,
+            bold: true,
+            color: '#8B1538',
+            margin: [0, 250, 0, 0],
+            alignment: 'left'
+          },
+          {
+            text: name,
+            fontSize: 14,
+            margin: [0, 350, 0, 0],
+            alignment: 'left'
+          },
+          { text: '', pageBreak: 'after' },
 
-      // Calcular dimensões para caber na página
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 10;
+          // Página 2 - Talentos e Tendência
+          {
+            text: 'Seus Talentos Profissionais',
+            fontSize: 18,
+            bold: true,
+            color: '#8B1538',
+            margin: [0, 0, 0, 10]
+          },
+          {
+            text: 'Com base nas suas escolhas, identificamos seus dois principais talentos:',
+            margin: [0, 0, 0, 20]
+          },
+          {
+            columns: [
+              {
+                width: '48%',
+                stack: [
+                  { text: resultsData.geniuses[0].name, fontSize: 16, bold: true, color: '#8B1538', margin: [0, 0, 0, 10] },
+                  { image: talent1Image, width: 150, alignment: 'center', margin: [0, 0, 0, 10] },
+                  { text: resultsData.geniuses[0].detailedDescription || resultsData.geniuses[0].description, alignment: 'justify' }
+                ]
+              },
+              { width: '4%', text: '' },
+              {
+                width: '48%',
+                stack: [
+                  { text: resultsData.geniuses[1].name, fontSize: 16, bold: true, color: '#8B1538', margin: [0, 0, 0, 10] },
+                  { image: talent2Image, width: 150, alignment: 'center', margin: [0, 0, 0, 10] },
+                  { text: resultsData.geniuses[1].detailedDescription || resultsData.geniuses[1].description, alignment: 'justify' }
+                ]
+              }
+            ],
+            margin: [0, 0, 0, 20]
+          },
+          {
+            text: 'Pontos de Melhoria',
+            fontSize: 16,
+            bold: true,
+            color: '#8B1538',
+            margin: [0, 20, 0, 10]
+          },
+          {
+            text: 'Áreas que você pode desenvolver ou complementar com outros profissionais:',
+            margin: [0, 0, 0, 10]
+          },
+          ...resultsData.improvements.map((imp, idx) => ({
+            text: `${idx + 1}. ${imp.name}\n${imp.description}`,
+            margin: [0, 0, 0, 8]
+          })),
+          {
+            text: 'Tendência Dominante',
+            fontSize: 16,
+            bold: true,
+            color: '#8B1538',
+            margin: [0, 20, 0, 10]
+          },
+          {
+            text: resultsData.dominantTendency,
+            fontSize: 14,
+            bold: true,
+            margin: [0, 0, 0, 5]
+          },
+          {
+            text: resultsData.tendencyDescription || '',
+            alignment: 'justify'
+          },
+          { text: '', pageBreak: 'after' },
 
-      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-      
-      // Salvar PDF
-      pdf.save(`Relatorio_Talentos_${name.replace(/\s+/g, '_')}.pdf`);
-      
-      // Remover mensagem de carregamento
-      document.body.removeChild(loadingDiv);
+          // Página 3 - Conselho de Carreira
+          {
+            text: 'Conselho de Carreira',
+            fontSize: 18,
+            bold: true,
+            color: '#8B1538',
+            margin: [0, 0, 0, 15]
+          },
+          ...resultsData.careerAdvice.split('\n\n').map(paragraph => ({
+            text: paragraph,
+            alignment: 'justify',
+            margin: [0, 0, 0, 12]
+          }))
+        ]
+      };
+
+      // Gerar e baixar PDF
+      pdfMake.createPdf(docDefinition).download(`Relatorio_Talentos_${name.replace(/\s+/g, '_')}.pdf`);
     } catch (error: any) {
       console.error('Erro ao gerar PDF:', error);
       alert(`Erro ao gerar PDF: ${error.message || 'Tente novamente'}`);
@@ -516,17 +604,10 @@ export default function Game() {
             {resultsData.geniuses.map((genius, index) => (
               <div key={index} className="talent-item" style={{ gridColumn: index === 0 ? '1' : '2' }}>
                 {talentImages[genius.name] && (
-                  <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                    <img 
-                      src={talentImages[genius.name]} 
-                      alt={genius.name}
-                      style={{ 
-                        maxWidth: '200px', 
-                        height: 'auto',
-                        borderRadius: '8px'
-                      }}
-                    />
-                  </div>
+                  <img 
+                    src={talentImages[genius.name]} 
+                    alt={genius.name}
+                  />
                 )}
                 <div className="talent-name">
                   {genius.name}

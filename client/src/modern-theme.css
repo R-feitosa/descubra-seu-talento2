@@ -406,12 +406,13 @@ body {
 
 .talent-item img {
   display: block;
-  margin: 0 auto;
-  max-width: 200px;
+  margin: 0 auto 15px auto;
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  border-radius: 8px;
-  background-color: white;
-  padding: 10px;
+  background-color: var(--bg-light);
+  padding: 0;
+  image-rendering: auto;
 }
 
 .talent-name {
