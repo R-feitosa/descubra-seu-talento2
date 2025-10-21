@@ -468,6 +468,68 @@ export const appRouter = router({
           throw new Error(`Falha ao gerar PDF: ${error.message}`);
         }
       }),
+
+    // Enviar resultados para Google Sheets
+    sendToSheets: publicProcedure
+      .input(z.object({
+        traineeId: z.string(),
+      }))
+      .mutation(async ({ input }) => {
+        const result = await getResult(input.traineeId);
+        if (!result) {
+          throw new Error("Resultado não encontrado");
+        }
+
+        const trainee = await getTrainee(input.traineeId);
+        if (!trainee) {
+          throw new Error("Trainee não encontrado");
+        }
+
+        // URL do Google Apps Script (configurar via variável de ambiente)
+        const sheetsUrl = process.env.GOOGLE_SHEETS_URL;
+        if (!sheetsUrl) {
+          console.warn("GOOGLE_SHEETS_URL não configurada. Pulando envio para Google Sheets.");
+          return { success: false, message: "Google Sheets não configurado" };
+        }
+
+        // Preparar dados para enviar
+        const sheetData = {
+          name: trainee.name,
+          whatsapp: trainee.whatsapp,
+          talents: [
+            { name: result.genius1 },
+            { name: result.genius2 },
+          ],
+          weaknesses: [
+            { name: result.frustration1 },
+            { name: result.frustration2 },
+          ],
+          tendency: result.dominantTendency,
+        };
+
+        try {
+          const response = await fetch(sheetsUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(sheetData),
+          });
+
+          const responseData = await response.json();
+          
+          if (responseData.success) {
+            console.log("Dados enviados para Google Sheets com sucesso!");
+            return { success: true, message: "Dados enviados com sucesso" };
+          } else {
+            console.error("Erro ao enviar para Google Sheets:", responseData.error);
+            return { success: false, message: responseData.error };
+          }
+        } catch (error: any) {
+          console.error("Erro ao enviar para Google Sheets:", error);
+          return { success: false, message: error.message };
+        }
+      }),
   }),
 });
 

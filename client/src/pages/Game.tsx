@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import "../modern-theme.css";
 
@@ -32,6 +32,8 @@ export default function Game() {
 
   const startGameMutation = trpc.game.start.useMutation();
   const submitAnswerMutation = trpc.game.submitAnswer.useMutation();
+  const generatePdfMutation = trpc.pdf.generate.useMutation();
+  const sendToSheetsMutation = trpc.game.sendToSheets.useMutation();
   
   const { data: phaseData, refetch: refetchPhase } = trpc.game.getPhase.useQuery(
     { traineeId, phase: currentPhase },
@@ -102,8 +104,7 @@ export default function Game() {
       console.log('Gerando PDF via backend...');
       
       // Chamar endpoint backend para gerar PDF
-      const generatePdf = trpc.pdf.generate.useMutation();
-      const response = await generatePdf.mutateAsync({ traineeId });
+      const response = await generatePdfMutation.mutateAsync({ traineeId });
       
       if (response.success && response.pdf) {
         // Converter base64 para blob e baixar
@@ -181,7 +182,7 @@ export default function Game() {
               fontSize: '14px',
               fontWeight: '600',
               color: 'var(--text-dark)',
-              textAlign: 'left'
+              textAlign: 'center'
             }}>
               Seu Nome
             </label>
@@ -209,7 +210,7 @@ export default function Game() {
               fontSize: '14px',
               fontWeight: '600',
               color: 'var(--text-dark)',
-              textAlign: 'left'
+              textAlign: 'center'
             }}>
               WhatsApp
             </label>
@@ -472,6 +473,13 @@ export default function Game() {
       );
     }
 
+    // Enviar para Google Sheets quando os resultados forem exibidos
+    useEffect(() => {
+      if (traineeId && resultsData) {
+        sendToSheetsMutation.mutateAsync({ traineeId }).catch(console.error);
+      }
+    }, [traineeId, resultsData]);
+
     return (
       <div className="results-container fade-in">
         <h2 className="results-title">Seus Resultados</h2>
@@ -483,16 +491,18 @@ export default function Game() {
           <p style={{ fontSize: '15px', marginBottom: '20px', lineHeight: '1.7', color: 'var(--text-dark)' }}>
             Com base nas suas escolhas durante o programa de trainee, identificamos seus dois principais <strong>Talentos Profissionais</strong> - as atividades que você realiza com naturalidade e que te energizam.
           </p>
-          {resultsData.geniuses.map((genius, index) => (
-            <div key={index} className="talent-item">
-              <div className="talent-name">
-                {genius.name}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            {resultsData.geniuses.map((genius, index) => (
+              <div key={index} className="talent-item" style={{ gridColumn: index === 0 ? '1' : '2' }}>
+                <div className="talent-name">
+                  {genius.name}
+                </div>
+                <div className="talent-description" style={{ textAlign: 'justify' }}>
+                  {genius.detailedDescription || genius.description}
+                </div>
               </div>
-              <div className="talent-description">
-                {genius.detailedDescription || genius.description}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="result-card">
