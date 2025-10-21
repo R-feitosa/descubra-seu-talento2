@@ -45,6 +45,13 @@ export default function Game() {
     { enabled: gameState === "results" && !!traineeId }
   );
 
+  // Enviar para Google Sheets quando os resultados forem carregados
+  useEffect(() => {
+    if (gameState === "results" && traineeId && resultsData) {
+      sendToSheetsMutation.mutateAsync({ traineeId }).catch(console.error);
+    }
+  }, [gameState, traineeId, resultsData]);
+
   const handleStartGame = async () => {
     if (!name || !whatsapp) {
       alert("Por favor, preencha todos os campos!");
@@ -472,13 +479,6 @@ export default function Game() {
         </div>
       );
     }
-
-    // Enviar para Google Sheets quando os resultados forem exibidos
-    useEffect(() => {
-      if (traineeId && resultsData) {
-        sendToSheetsMutation.mutateAsync({ traineeId }).catch(console.error);
-      }
-    }, [traineeId, resultsData]);
 
     return (
       <div className="results-container fade-in">
