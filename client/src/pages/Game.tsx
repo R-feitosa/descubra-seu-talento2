@@ -131,9 +131,11 @@ export default function Game() {
         });
       };
 
-      // Carregar imagens dos talentos
+      // Carregar imagens dos talentos e timbres
       const talent1Image = await imageToBase64(talentImages[resultsData.geniuses[0].name]);
       const talent2Image = await imageToBase64(talentImages[resultsData.geniuses[1].name]);
+      const timbreCapa = await imageToBase64('/timbre-capa.png');
+      const timbrePagina = await imageToBase64('/timbre-pagina.png');
 
       // Configurar fontes do pdfMake
       if (pdfMake.vfs) {
@@ -150,11 +152,28 @@ export default function Game() {
       // Definir documento PDF
       const docDefinition: any = {
         pageSize: 'A4',
-        pageMargins: [40, 60, 40, 60],
+        pageMargins: [40, 80, 40, 80],
         defaultStyle: {
           font: 'Roboto',
           fontSize: 11,
           lineHeight: 1.4
+        },
+        background: function(currentPage: number) {
+          if (currentPage === 1) {
+            return {
+              image: timbreCapa,
+              width: 595.28,
+              height: 841.89,
+              absolutePosition: { x: 0, y: 0 }
+            };
+          } else {
+            return {
+              image: timbrePagina,
+              width: 595.28,
+              height: 841.89,
+              absolutePosition: { x: 0, y: 0 }
+            };
+          }
         },
         content: [
           // Página 1 - Capa

@@ -410,8 +410,9 @@ body {
   width: 100%;
   max-width: 300px;
   height: auto;
-  background-color: var(--bg-light);
-  padding: 0;
+  background-color: #f5f1e8;
+  padding: 15px;
+  border-radius: 8px;
   image-rendering: auto;
 }
 
