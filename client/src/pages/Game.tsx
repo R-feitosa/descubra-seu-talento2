@@ -549,10 +549,10 @@ export default function Game() {
 
         <div className="result-card">
           <h3 className="result-card-title">
-            <span>📊</span> Tendência Dominante
+            <span>📊</span> Tendência Dominante: {resultsData.dominantTendency}
           </h3>
-          <p style={{ fontSize: '16px', fontWeight: '600', color: 'var(--primary-dark)' }}>
-            {resultsData.dominantTendency}
+          <p style={{ fontSize: '15px', lineHeight: '1.7', color: 'var(--text-dark)', textAlign: 'justify' }}>
+            {resultsData.tendencyDescription || ''}
           </p>
         </div>
 

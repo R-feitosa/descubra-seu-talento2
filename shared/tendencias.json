@@ -1,0 +1,13 @@
+{
+  "tendencias": {
+    "Flexível": {
+      "nome": "Flexível",
+      "descricao": "Pessoas com tendência Flexível são adaptáveis, criativas e orientadas para pessoas. Elas se destacam em ambientes dinâmicos, lidam bem com mudanças e são excelentes em construir relacionamentos. Tendem a ser inovadoras, comunicativas e capazes de inspirar e engajar outras pessoas."
+    },
+    "Técnica": {
+      "nome": "Técnica",
+      "descricao": "Pessoas com tendência Técnica são analíticas, focadas e orientadas para resultados. Elas se destacam em ambientes estruturados, valorizam precisão e qualidade, e são excelentes em resolver problemas complexos. Tendem a ser determinadas, organizadas e capazes de manter o foco em objetivos de longo prazo."
+    }
+  }
+}
+

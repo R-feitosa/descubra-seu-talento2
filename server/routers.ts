@@ -22,6 +22,7 @@ import { readFile, unlink } from "fs/promises";
 import talentosData from "../shared/talentos.json";
 import conselhosData from "../shared/conselhos.json";
 import dilemasData from "../shared/dilemas.json";
+import tendenciasData from "../shared/tendencias.json";
 
 const execAsync = promisify(exec);
 
@@ -278,6 +279,7 @@ export const appRouter = router({
             },
           ],
           dominantTendency: result.dominantTendency,
+          tendencyDescription: (tendenciasData.tendencias as any)[result.dominantTendency]?.descricao || '',
           averages: {
             R: result.avgR / 100,
             I: result.avgI / 100,
