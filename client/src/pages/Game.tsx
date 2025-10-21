@@ -71,14 +71,14 @@ export default function Game() {
         name: name,
         whatsapp: whatsapp,
         talents: [
-          { name: resultsData.result?.genius1 || '' },
-          { name: resultsData.result?.genius2 || '' }
+          { name: resultsData.geniuses?.[0]?.name || '' },
+          { name: resultsData.geniuses?.[1]?.name || '' }
         ],
         weaknesses: [
-          { name: resultsData.result?.frustration1 || '' },
-          { name: resultsData.result?.frustration2 || '' }
+          { name: resultsData.improvements?.[0]?.name || '' },
+          { name: resultsData.improvements?.[1]?.name || '' }
         ],
-        tendency: resultsData.result?.dominantTendency || ''
+        tendency: resultsData.dominantTendency || ''
       };
       
       console.log('[Frontend] Dados a enviar:', sheetData);
