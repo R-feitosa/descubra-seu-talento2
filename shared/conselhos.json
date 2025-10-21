@@ -1,0 +1,34 @@
+{
+  "conselhos": {
+    "R": {
+      "titulo": "Reflexão - O Questionador Estratégico",
+      "conselho": "Seu talento de Reflexão é um dom raro e valioso. Você tem a capacidade de enxergar além do óbvio e questionar o status quo de maneira construtiva. No ambiente jurídico, isso significa que você pode identificar lacunas em argumentos, antecipar problemas antes que eles aconteçam e propor abordagens inovadoras para casos complexos.\n\nBusque posições onde sua capacidade de análise crítica seja valorizada: consultoria estratégica, planejamento jurídico, desenvolvimento de novas práticas e áreas de atuação. Você prospera em ambientes que permitem tempo para pensar profundamente sobre questões complexas.\n\nCuidado para não ficar paralisado na fase de questionamento. Combine seu talento com pessoas que tenham Invenção e Discernimento para transformar suas reflexões em ações concretas."
+    },
+    "I": {
+      "titulo": "Invenção - O Criador de Soluções",
+      "conselho": "Seu poder de Invenção deve ser canalizado para áreas de inovação e desenvolvimento de produtos jurídicos. Você é o motor que cria o novo e disruptivo. No escritório de advocacia, você é a pessoa que desenvolve novas teses jurídicas, cria modelos de contratos inovadores e propõe soluções criativas para problemas que parecem insolúveis.\n\nBusque oportunidades em: desenvolvimento de novos serviços jurídicos, legal tech, criação de metodologias proprietárias, e áreas emergentes do direito. Você se destaca quando tem liberdade para experimentar e criar sem restrições excessivas.\n\nLembre-se de que nem todas as suas ideias precisam ser implementadas. Trabalhe próximo a pessoas com Discernimento que possam ajudar a filtrar e priorizar suas criações, e com pessoas de Tenacidade que possam executá-las."
+    },
+    "D": {
+      "titulo": "Discernimento - O Avaliador Intuitivo",
+      "conselho": "Seu Discernimento é uma habilidade crítica que diferencia bons profissionais de excelentes profissionais. Você tem a capacidade de avaliar rapidamente a viabilidade de estratégias jurídicas, identificar riscos ocultos e tomar decisões sólidas mesmo com informações limitadas.\n\nNo ambiente jurídico, você é essencial em: análise de viabilidade de ações, avaliação de riscos processuais, seleção de estratégias de defesa ou ataque, e tomada de decisões estratégicas. Você prospera em posições de liderança onde suas decisões impactam diretamente os resultados.\n\nSeu desafio é confiar na sua intuição mesmo quando outros pedem mais análises. Desenvolva a habilidade de articular o raciocínio por trás das suas avaliações instintivas. Trabalhe com pessoas de Reflexão para aprofundar análises quando necessário, e com pessoas de Arrebatamento para comunicar suas decisões de forma inspiradora."
+    },
+    "A": {
+      "titulo": "Arrebatamento - O Mobilizador de Equipes",
+      "conselho": "Seu talento de Arrebatamento é o que transforma ideias em movimento e projetos em realidade. Você tem a capacidade natural de inspirar, motivar e mobilizar pessoas em torno de objetivos comuns. No contexto jurídico, você é quem consegue engajar clientes, alinhar equipes e criar momentum para projetos importantes.\n\nBusque posições onde sua capacidade de liderança e comunicação seja central: gestão de equipes, desenvolvimento de negócios, relacionamento com clientes, apresentações em júri, e liderança de projetos complexos. Você se destaca quando pode interagir com pessoas e criar entusiasmo.\n\nCuidado para não assumir compromissos além da capacidade de execução. Trabalhe próximo a pessoas com Facilitação que podem ajudar a viabilizar o que você mobiliza, e com pessoas de Tenacidade que garantirão que os projetos sejam concluídos com qualidade."
+    },
+    "F": {
+      "titulo": "Facilitação - O Viabilizador de Sucesso",
+      "conselho": "Com a Facilitação, você se destaca em funções de suporte estratégico, gestão de pessoas, coordenação de equipes e relacionamento com clientes. Seu sucesso vem de apoiar e viabilizar o sucesso dos outros. No ambiente jurídico, você é essencial para garantir que as equipes tenham o que precisam para performar no mais alto nível.\n\nBusque oportunidades em: gestão de RH jurídico, coordenação de projetos, suporte a sócios e advogados seniores, gestão de relacionamento com clientes, e operações jurídicas. Você prospera quando pode remover obstáculos e criar condições para que outros brilhem.\n\nSeu maior desafio é garantir que seu trabalho seja reconhecido e valorizado. Aprenda a comunicar o impacto do seu suporte. Trabalhe com pessoas de Arrebatamento que podem amplificar sua contribuição, e com pessoas de Tenacidade que compartilham seu compromisso com a excelência na execução."
+    },
+    "T": {
+      "titulo": "Tenacidade - O Finalizador Impecável",
+      "conselho": "Seu talento de Tenacidade é o que garante que projetos sejam concluídos com excelência. Você tem a capacidade de manter foco, superar obstáculos e entregar resultados de alta qualidade mesmo sob pressão. No ambiente jurídico, você é quem garante que petições sejam impecáveis, prazos sejam cumpridos e casos sejam conduzidos até a conclusão.\n\nBusque posições onde atenção aos detalhes e execução impecável sejam críticas: contencioso de alta complexidade, due diligence, compliance, auditoria jurídica, e gestão de processos. Você se destaca quando pode mergulhar profundamente em projetos e levá-los até a perfeição.\n\nCuidado para não se sobrecarregar assumindo mais do que pode executar com qualidade. Aprenda a delegar e a trabalhar com pessoas de Facilitação que podem ajudar a distribuir a carga. Combine seu talento com pessoas de Discernimento para priorizar onde aplicar sua tenacidade."
+    }
+  },
+  "conselhosGerais": {
+    "doisGenios": "Você identificou seus dois Talentos Profissionais - os talentos que lhe trazem energia, satisfação e nos quais você naturalmente se destaca. Estes são seus superpoderes profissionais. Busque posições e projetos que permitam usar esses talentos diariamente.\n\nLembre-se: você também tem Pontos de Melhoria - áreas que drenam sua energia e nas quais você não performa no seu melhor. Não tente ser bom em tudo. Em vez disso, construa equipes complementares onde seus pontos de melhoria sejam os talentos de outras pessoas.",
+    "tendenciaFlexivel": "Sua tendência dominante é Flexível, o que significa que você prospera em ambientes que valorizam criatividade, adaptabilidade, trabalho com pessoas e pensamento inovador. Você pode se sentir frustrado em ambientes excessivamente rígidos, burocráticos ou focados apenas em processos técnicos.",
+    "tendenciaTecnica": "Sua tendência dominante é Técnica, o que significa que você prospera em ambientes que valorizam análise, julgamento criterioso, processos estruturados e execução de excelência. Você pode se sentir frustrado em ambientes excessivamente caóticos, improvisados ou que mudam constantemente de direção."
+  }
+}
+

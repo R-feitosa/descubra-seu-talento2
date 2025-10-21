@@ -1,0 +1,437 @@
+/* Super Nintendo 16-bit Theme */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --snes-bg: #1a1a2e;
+  --snes-primary: #4a90e2;
+  --snes-secondary: #e94560;
+  --snes-accent: #ffd700;
+  --snes-text: #ffffff;
+  --snes-text-dark: #2d2d44;
+  --snes-border: #0f3460;
+  --snes-shadow: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+  background: var(--snes-bg);
+  color: var(--snes-text);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.snes-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.snes-screen {
+  width: 100%;
+  max-width: 800px;
+  background: #000;
+  border: 8px solid #2d2d44;
+  border-radius: 16px;
+  box-shadow: 
+    0 0 20px rgba(74, 144, 226, 0.3),
+    inset 0 0 40px rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.snes-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 3px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snes-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background Images */
+.snes-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Character Portrait */
+.snes-character {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Title */
+.snes-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--snes-accent);
+  text-shadow: 
+    3px 3px 0 var(--snes-secondary),
+    6px 6px 0 var(--snes-border);
+  line-height: 1.5;
+}
+
+.snes-subtitle {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--snes-primary);
+  text-shadow: 2px 2px 0 var(--snes-border);
+}
+
+/* Dialog Box */
+.snes-dialog-box {
+  background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+  border: 4px solid var(--snes-primary);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 
+    0 4px 8px var(--snes-shadow),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.snes-dialog-box::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--snes-primary);
+}
+
+.snes-text {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--snes-text);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Input Fields */
+.snes-input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  background: #0f3460;
+  border: 3px solid var(--snes-primary);
+  border-radius: 8px;
+  color: var(--snes-text);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.snes-input:focus {
+  outline: none;
+  border-color: var(--snes-accent);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(255, 215, 0, 0.5);
+}
+
+.snes-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.snes-button {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+  border: 3px solid #2d5f8d;
+  border-radius: 8px;
+  color: var(--snes-text);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 
+    0 4px 0 #1a3a52,
+    0 6px 8px var(--snes-shadow);
+  transition: all 0.1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.snes-button:hover {
+  background: linear-gradient(180deg, #5aa0f2 0%, #4580cd 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 0 #1a3a52,
+    0 8px 12px var(--snes-shadow);
+}
+
+.snes-button:active {
+  transform: translateY(2px);
+  box-shadow: 
+    0 2px 0 #1a3a52,
+    0 3px 4px var(--snes-shadow);
+}
+
+.snes-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.snes-button-primary {
+  background: linear-gradient(180deg, #ffd700 0%, #e6b800 100%);
+  border-color: #b38f00;
+  color: var(--snes-text-dark);
+  box-shadow: 
+    0 4px 0 #8a6d00,
+    0 6px 8px var(--snes-shadow);
+}
+
+.snes-button-primary:hover {
+  background: linear-gradient(180deg, #ffe44d 0%, #ffd700 100%);
+  box-shadow: 
+    0 6px 0 #8a6d00,
+    0 8px 12px var(--snes-shadow);
+}
+
+.snes-button-primary:active {
+  box-shadow: 
+    0 2px 0 #8a6d00,
+    0 3px 4px var(--snes-shadow);
+}
+
+.snes-button-secondary {
+  background: linear-gradient(180deg, #e94560 0%, #c93850 100%);
+  border-color: #a02d40;
+  box-shadow: 
+    0 4px 0 #7a2230,
+    0 6px 8px var(--snes-shadow);
+}
+
+.snes-button-secondary:hover {
+  background: linear-gradient(180deg, #f95570 0%, #e94560 100%);
+  box-shadow: 
+    0 6px 0 #7a2230,
+    0 8px 12px var(--snes-shadow);
+}
+
+/* Badge */
+.snes-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  background: linear-gradient(135deg, var(--snes-secondary) 0%, #c93850 100%);
+  border: 2px solid #a02d40;
+  border-radius: 20px;
+  font-size: 10px;
+  color: var(--snes-text);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px var(--snes-shadow);
+}
+
+/* Progress Bar */
+.snes-progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #0f3460;
+  border: 3px solid var(--snes-border);
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.snes-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    #4a90e2 0%, 
+    #5aa0f2 50%, 
+    #4a90e2 100%);
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+  animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Card */
+.snes-card {
+  background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+  border: 4px solid var(--snes-primary);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 8px var(--snes-shadow);
+}
+
+/* Divider */
+.snes-divider {
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--snes-primary) 50%, 
+    transparent 100%);
+  margin: 15px 0;
+}
+
+/* Spinner */
+.snes-spinner {
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  border: 6px solid var(--snes-border);
+  border-top: 6px solid var(--snes-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .snes-title {
+    font-size: 18px;
+  }
+  
+  .snes-subtitle {
+    font-size: 12px;
+  }
+  
+  .snes-text {
+    font-size: 10px;
+  }
+  
+  .snes-button {
+    font-size: 10px;
+    padding: 12px 16px;
+  }
+  
+  .snes-character {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .snes-screen {
+    padding: 20px;
+    border-width: 4px;
+  }
+  
+  .snes-title {
+    font-size: 14px;
+  }
+  
+  .snes-subtitle {
+    font-size: 10px;
+  }
+  
+  .snes-text {
+    font-size: 9px;
+  }
+  
+  .snes-button {
+    font-size: 9px;
+    padding: 10px 12px;
+  }
+  
+  .snes-character {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .snes-container {
+    background: white;
+  }
+  
+  .snes-screen {
+    border: 2px solid black;
+    box-shadow: none;
+  }
+  
+  .snes-screen::before {
+    display: none;
+  }
+  
+  .snes-button {
+    display: none;
+  }
+}
+

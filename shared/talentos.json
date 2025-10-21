@@ -1,0 +1,88 @@
+{
+  "talentos": {
+    "R": {
+      "codigo": "R",
+      "nome": "Reflexão",
+      "nomeIngles": "Wonder",
+      "estagio": "Idealização",
+      "tendencia": "Flexível",
+      "descricao": "Questionar o status quo e enxergar potencial inexplorado",
+      "descricaoDetalhada": "Pessoas com o talento de Reflexão têm uma capacidade natural de observar o mundo ao seu redor e questionar por que as coisas são feitas de determinada maneira. Elas enxergam possibilidades onde outros veem apenas rotina, e são excelentes em identificar oportunidades de melhoria e inovação."
+    },
+    "I": {
+      "codigo": "I",
+      "nome": "Invenção",
+      "nomeIngles": "Invention",
+      "estagio": "Idealização",
+      "tendencia": "Flexível",
+      "descricao": "Criar novas ideias, soluções e abordagens originais",
+      "descricaoDetalhada": "O talento de Invenção permite que as pessoas criem soluções originais e inovadoras para problemas complexos. Elas são naturalmente criativas e adoram desenvolver novas ideias, produtos ou processos do zero. São o motor da inovação em qualquer organização."
+    },
+    "D": {
+      "codigo": "D",
+      "nome": "Discernimento",
+      "nomeIngles": "Discernment",
+      "estagio": "Ativação",
+      "tendencia": "Técnica",
+      "descricao": "Avaliar ideias usando intuição e bom senso para julgar a viabilidade",
+      "descricaoDetalhada": "Pessoas com Discernimento possuem uma intuição aguçada para avaliar ideias e identificar quais têm real potencial de sucesso. Elas conseguem filtrar rapidamente o que funciona do que não funciona, usando uma combinação de experiência, bom senso e instinto."
+    },
+    "A": {
+      "codigo": "A",
+      "nome": "Arrebatamento",
+      "nomeIngles": "Galvanizing",
+      "estagio": "Ativação",
+      "tendencia": "Flexível",
+      "descricao": "Arregimentar, motivar e inspirar pessoas para a ação",
+      "descricaoDetalhada": "O talento de Arrebatamento é a capacidade de mobilizar e inspirar outras pessoas a agirem. Essas pessoas são naturalmente carismáticas e conseguem criar entusiasmo e engajamento em torno de projetos e iniciativas. São excelentes em comunicação e liderança motivacional."
+    },
+    "F": {
+      "codigo": "F",
+      "nome": "Facilitação",
+      "nomeIngles": "Enablement",
+      "estagio": "Implementação",
+      "tendencia": "Flexível",
+      "descricao": "Prover apoio, remover obstáculos e facilitar o sucesso dos outros",
+      "descricaoDetalhada": "Pessoas com o talento de Facilitação encontram satisfação em ajudar os outros a terem sucesso. Elas são excelentes em identificar e remover obstáculos, fornecer recursos e apoio necessários, e criar condições para que as equipes prosperem. Seu lema é servir."
+    },
+    "T": {
+      "codigo": "T",
+      "nome": "Tenacidade",
+      "nomeIngles": "Tenacity",
+      "estagio": "Implementação",
+      "tendencia": "Técnica",
+      "descricao": "Levar projetos e tarefas até a conclusão com altos padrões",
+      "descricaoDetalhada": "O talento de Tenacidade é a capacidade de levar projetos até o fim, superando obstáculos e mantendo altos padrões de qualidade. Essas pessoas são persistentes, detalhistas e não descansam até que o trabalho esteja completamente finalizado e bem-feito."
+    }
+  },
+  "estagios": {
+    "Idealização": {
+      "nome": "Idealização",
+      "descricao": "Fase inicial onde surgem perguntas e ideias",
+      "talentos": ["R", "I"]
+    },
+    "Ativação": {
+      "nome": "Ativação",
+      "descricao": "Fase intermediária onde ideias são avaliadas e mobilizadas",
+      "talentos": ["D", "A"]
+    },
+    "Implementação": {
+      "nome": "Implementação",
+      "descricao": "Fase final onde projetos são executados e concluídos",
+      "talentos": ["F", "T"]
+    }
+  },
+  "tendencias": {
+    "Flexível": {
+      "nome": "Flexível",
+      "descricao": "Talentos relacionados a criatividade, pessoas e adaptabilidade",
+      "talentos": ["R", "I", "A", "F"]
+    },
+    "Técnica": {
+      "nome": "Técnica",
+      "descricao": "Talentos relacionados a análise, julgamento e execução",
+      "talentos": ["D", "T"]
+    }
+  }
+}
+

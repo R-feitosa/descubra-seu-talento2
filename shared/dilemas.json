@@ -1,0 +1,1269 @@
+{
+  "fases": [
+    {
+      "fase": 1,
+      "setor": "Cível",
+      "supervisor": "Dra. Flávia",
+      "cenario": "Cabines de trabalho individuais",
+      "dilemas": [
+        {
+          "contexto": "Você está revisando um caso de disputa contratual entre duas empresas. O contrato é complexo e há múltiplas interpretações possíveis das cláusulas.",
+          "desafio": "Como você abordaria este caso?",
+          "opcoes": [
+            {
+              "texto": "Questiono os pressupostos do contrato e exploro interpretações alternativas que podem beneficiar nosso cliente",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Crio uma nova estratégia jurídica inovadora baseada em precedentes pouco explorados",
+              "scores": {
+                "I": 5,
+                "R": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Avalio rapidamente qual interpretação tem maior chance de sucesso no tribunal",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Mergulho nos detalhes técnicos do contrato até dominar cada cláusula perfeitamente",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Um cliente potencial procura o escritório com um caso que não se enquadra perfeitamente em nenhuma área tradicional do direito.",
+          "desafio": "Qual seria sua primeira reação?",
+          "opcoes": [
+            {
+              "texto": "Reflito sobre por que este tipo de caso não tem uma categoria clara e que lacuna jurídica isso revela",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Busco entender as necessidades do cliente e facilito o encaminhamento para os especialistas adequados",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "R": 1,
+                "I": 1,
+                "D": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Apresento o caso para a equipe de forma entusiasmada, mobilizando interesse e colaboração",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "R": 1,
+                "D": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Avalio instintivamente se o caso tem viabilidade e potencial de sucesso para o escritório",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "A": 1,
+                "R": 1,
+                "I": 1,
+                "F": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Durante a análise de um processo, você nota que a abordagem padrão do escritório para este tipo de caso pode não ser a mais eficaz.",
+          "desafio": "O que você faz?",
+          "opcoes": [
+            {
+              "texto": "Questiono por que fazemos desta forma e exploro se há uma abordagem melhor",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Desenvolvo uma metodologia alternativa completamente nova para este tipo de caso",
+              "scores": {
+                "I": 5,
+                "R": 3,
+                "T": 1,
+                "D": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Sigo o procedimento estabelecido com perfeição, garantindo que cada etapa seja executada impecavelmente",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Avalio rapidamente se vale a pena mudar a abordagem ou manter o que já funciona",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você precisa preparar uma petição inicial para um caso com prazo apertado e múltiplas complexidades técnicas.",
+          "desafio": "Como você organiza seu trabalho?",
+          "opcoes": [
+            {
+              "texto": "Mergulho na tarefa e trabalho incansavelmente até entregar uma petição perfeita",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Coordeno com a equipe para garantir que todos tenham os recursos necessários para contribuir",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Uso minha intuição para priorizar os argumentos mais fortes e focar neles",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "I": 1,
+                "R": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Reflito sobre qual seria a abordagem mais estratégica antes de começar a escrever",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fase": 2,
+      "setor": "Trabalhista",
+      "supervisor": "Dra. Flávia",
+      "cenario": "Sala de Audiências/Tribunal",
+      "dilemas": [
+        {
+          "contexto": "Você está preparando a defesa para uma audiência trabalhista complexa que acontecerá amanhã. Há centenas de documentos para revisar.",
+          "desafio": "Como você se prepara?",
+          "opcoes": [
+            {
+              "texto": "Trabalho a noite toda se necessário, revisando cada documento até ter domínio completo do caso",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Uso meu discernimento para identificar rapidamente os documentos mais relevantes",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Organizo a equipe para dividir a revisão de forma eficiente e apoio onde necessário",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "D": 1,
+                "R": 1,
+                "I": 1
+              }
+            },
+            {
+              "texto": "Reflito sobre a estratégia geral antes de mergulhar nos detalhes",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Durante a audiência, o juiz faz uma pergunta inesperada que não estava nos seus preparativos.",
+          "desafio": "Como você reage?",
+          "opcoes": [
+            {
+              "texto": "Confio na minha intuição e respondo com base no meu entendimento profundo do caso",
+              "scores": {
+                "D": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Improviso uma resposta criativa que conecta a pergunta aos nossos argumentos principais",
+              "scores": {
+                "I": 5,
+                "A": 3,
+                "D": 1,
+                "R": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Respondo com precisão técnica baseada no meu conhecimento detalhado dos autos",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Uso minha capacidade de comunicação para engajar o juiz e reforçar nossa posição",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Após a audiência, você identifica que precisa apresentar memoriais complementares para reforçar a defesa.",
+          "desafio": "Como você procede?",
+          "opcoes": [
+            {
+              "texto": "Dedico-me intensamente a produzir memoriais impecáveis, revisando múltiplas vezes",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Desenvolvo uma abordagem inovadora para os memoriais que se destaque dos padrões",
+              "scores": {
+                "I": 5,
+                "R": 3,
+                "T": 1,
+                "A": 1,
+                "D": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Mobilizo a equipe para trabalhar colaborativamente nos memoriais",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "T": 1,
+                "I": 1,
+                "D": 1,
+                "R": 1
+              }
+            },
+            {
+              "texto": "Avalio estrategicamente quais pontos devem ser enfatizados nos memoriais",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "O cliente está ansioso com o andamento do processo e liga constantemente pedindo atualizações.",
+          "desafio": "Como você gerencia essa situação?",
+          "opcoes": [
+            {
+              "texto": "Crio um sistema de comunicação estruturado para manter o cliente informado sem interrupções constantes",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Uso minha capacidade de comunicação para tranquilizar e engajar o cliente positivamente",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Facilito o acesso do cliente às informações e removo barreiras de comunicação",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Avalio qual nível de comunicação é realmente necessário e estabeleço limites apropriados",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fase": 3,
+      "setor": "Previdenciário",
+      "supervisor": "Dra. Flávia",
+      "cenario": "Sala de Reuniões com Clientes",
+      "dilemas": [
+        {
+          "contexto": "Uma cliente idosa chega ao escritório confusa sobre seus direitos previdenciários e com documentação incompleta.",
+          "desafio": "Como você a atende?",
+          "opcoes": [
+            {
+              "texto": "Ajudo a organizar sua documentação e facilito o acesso aos documentos que faltam",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Explico de forma clara e inspiradora como podemos ajudá-la a conquistar seus direitos",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Avalio rapidamente qual é o melhor caminho jurídico para o caso dela",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Questiono por que o sistema previdenciário é tão confuso para pessoas comuns",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você identifica que muitos clientes previdenciários têm dificuldades similares no processo de atendimento.",
+          "desafio": "O que você propõe?",
+          "opcoes": [
+            {
+              "texto": "Desenvolvo um guia inovador e simplificado para clientes previdenciários",
+              "scores": {
+                "I": 5,
+                "F": 3,
+                "R": 1,
+                "A": 1,
+                "D": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Reflito sobre as causas estruturais dessas dificuldades e como poderíamos abordá-las",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Crio um sistema de suporte que facilita a jornada do cliente desde o primeiro contato",
+              "scores": {
+                "F": 5,
+                "T": 3,
+                "A": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Mobilizo a equipe para melhorar coletivamente a experiência dos clientes",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Um colega está sobrecarregado com casos previdenciários e pedindo ajuda.",
+          "desafio": "Como você responde?",
+          "opcoes": [
+            {
+              "texto": "Ofereço suporte imediato e ajudo a remover os obstáculos que estão atrasando o trabalho dele",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Assumo alguns casos e trabalho com dedicação para entregá-los com qualidade",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Avalio quais casos são mais urgentes e ajudo a priorizar",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Motivo o colega e organizo a equipe para apoiá-lo coletivamente",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "O INSS está demorando meses para responder aos pedidos administrativos, frustrando os clientes.",
+          "desafio": "Como você lida com isso?",
+          "opcoes": [
+            {
+              "texto": "Desenvolvo estratégias alternativas e criativas para acelerar os processos",
+              "scores": {
+                "I": 5,
+                "D": 3,
+                "R": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Mantenho os clientes informados e facilito a comunicação para reduzir a ansiedade",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Acompanho cada processo meticulosamente e tomo todas as medidas cabíveis",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Reflito sobre as falhas sistêmicas do INSS e como poderíamos abordá-las estrategicamente",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fase": 4,
+      "setor": "Controladoria",
+      "supervisor": "Dra. Leandra",
+      "cenario": "Sala com computadores e ar futurista",
+      "dilemas": [
+        {
+          "contexto": "Você está analisando os indicadores de desempenho do escritório e nota algumas inconsistências nos dados.",
+          "desafio": "Como você procede?",
+          "opcoes": [
+            {
+              "texto": "Uso minha intuição para identificar rapidamente onde estão os problemas reais",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Investigo meticulosamente cada inconsistência até encontrar a causa raiz",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Questiono se os indicadores que estamos usando são realmente os mais relevantes",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Desenvolvo um novo sistema de monitoramento mais robusto e confiável",
+              "scores": {
+                "I": 5,
+                "T": 3,
+                "R": 1,
+                "D": 1,
+                "A": 1,
+                "F": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "A sócia pede sua opinião sobre investir em um novo software de gestão que promete aumentar a eficiência.",
+          "desafio": "Como você avalia essa proposta?",
+          "opcoes": [
+            {
+              "texto": "Avalio instintivamente se o investimento faz sentido baseado na minha experiência",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Faço uma análise detalhada de custo-benefício com todos os dados disponíveis",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Questiono se há outras formas de aumentar eficiência antes de investir em software",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Imagino soluções alternativas que poderiam ser mais adequadas para nossas necessidades",
+              "scores": {
+                "I": 5,
+                "R": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você percebe que alguns processos estão demorando mais do que o esperado, impactando a produtividade da equipe.",
+          "desafio": "Como você aborda essa situação?",
+          "opcoes": [
+            {
+              "texto": "Avalio rapidamente quais processos estão travados e proponho soluções imediatas",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Analiso detalhadamente cada etapa dos processos para identificar gargalos específicos",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Reúno a equipe para discutir colaborativamente as dificuldades e buscar soluções conjuntas",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "D": 1,
+                "I": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Questiono se os processos atuais realmente fazem sentido ou se precisam ser repensados",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você percebe que há inconsistências nos dados de acompanhamento de processos entre diferentes sistemas do escritório.",
+          "desafio": "Como você resolve essa situação?",
+          "opcoes": [
+            {
+              "texto": "Avalio rapidamente qual sistema tem os dados mais confiáveis e proponho padronizar por ele",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Analiso detalhadamente cada sistema para identificar a origem das inconsistências",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Reúno as equipes que usam cada sistema para entender as necessidades de cada área",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Questiono se realmente precisamos de múltiplos sistemas ou se podemos simplificar",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fase": 5,
+      "setor": "Planejamento e Desenvolvimento",
+      "supervisor": "Dr. Anderson",
+      "cenario": "Sala com computadores e quadro com gráficos",
+      "dilemas": [
+        {
+          "contexto": "O escritório quer desenvolver um novo serviço jurídico para se diferenciar no mercado.",
+          "desafio": "Como você contribui?",
+          "opcoes": [
+            {
+              "texto": "Crio conceitos completamente novos de serviços que não existem no mercado",
+              "scores": {
+                "I": 5,
+                "R": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Questiono quais são as necessidades não atendidas dos clientes que poderíamos explorar",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Avalio quais ideias têm maior viabilidade de implementação e sucesso",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "I": 1,
+                "R": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Mobilizo a equipe para brainstorming colaborativo e criativo",
+              "scores": {
+                "A": 5,
+                "I": 3,
+                "F": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "A equipe está enfrentando dificuldades para acessar informações importantes de processos antigos do escritório.",
+          "desafio": "Como você propõe resolver esse problema?",
+          "opcoes": [
+            {
+              "texto": "Crio uma solução inovadora de organização digital que facilite o acesso às informações",
+              "scores": {
+                "I": 5,
+                "T": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "R": 1
+              }
+            },
+            {
+              "texto": "Reflito sobre qual é a melhor forma de estruturar essas informações para facilitar o trabalho",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Avalio rapidamente qual ferramenta disponível resolve o problema de forma mais eficiente",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "I": 1,
+                "R": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Me comprometo a organizar sistematicamente todo o arquivo, mesmo que leve tempo",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "O escritório quer melhorar a comunicação interna entre as diferentes áreas jurídicas.",
+          "desafio": "Que solução você propõe?",
+          "opcoes": [
+            {
+              "texto": "Desenvolvo um sistema criativo de compartilhamento de conhecimento entre as áreas",
+              "scores": {
+                "I": 5,
+                "A": 3,
+                "R": 1,
+                "D": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Questiono quais são as reais barreiras de comunicação antes de propor soluções",
+              "scores": {
+                "R": 5,
+                "I": 3,
+                "D": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Crio um processo estruturado de reuniões e documentação compartilhada",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Mobilizo as pessoas de forma inspiradora para que colaborem mais entre si",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você identifica uma oportunidade de usar tecnologia para automatizar processos repetitivos.",
+          "desafio": "Como você desenvolve essa ideia?",
+          "opcoes": [
+            {
+              "texto": "Projeto uma solução tecnológica inovadora do zero",
+              "scores": {
+                "I": 5,
+                "T": 3,
+                "R": 1,
+                "D": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Avalio quais processos realmente valem a pena automatizar primeiro",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "I": 1,
+                "R": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Trabalho incansavelmente para implementar a automação com perfeição técnica",
+              "scores": {
+                "T": 5,
+                "I": 3,
+                "D": 1,
+                "R": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Facilito a adoção da tecnologia pela equipe, removendo resistências e obstáculos",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "I": 1,
+                "D": 1,
+                "R": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fase": 6,
+      "setor": "Marketing",
+      "supervisor": "Jânio Edson",
+      "cenario": "Escritório administrativo",
+      "dilemas": [
+        {
+          "contexto": "O escritório vai lançar uma nova área de atuação e precisa comunicar isso ao mercado.",
+          "desafio": "Como você aborda essa comunicação?",
+          "opcoes": [
+            {
+              "texto": "Crio uma campanha inspiradora que mobiliza interesse e entusiasmo no mercado",
+              "scores": {
+                "A": 5,
+                "I": 3,
+                "F": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Desenvolvo um conceito de campanha completamente inovador e disruptivo",
+              "scores": {
+                "I": 5,
+                "A": 3,
+                "R": 1,
+                "D": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Planejo meticulosamente cada detalhe da campanha para garantir execução perfeita",
+              "scores": {
+                "T": 5,
+                "D": 3,
+                "F": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Questiono qual é a verdadeira proposta de valor que deveríamos comunicar",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você precisa apresentar os serviços do escritório em um evento de networking.",
+          "desafio": "Como você se prepara?",
+          "opcoes": [
+            {
+              "texto": "Preparo uma apresentação envolvente que inspira e mobiliza a audiência",
+              "scores": {
+                "A": 5,
+                "I": 3,
+                "F": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Crio uma abordagem de apresentação única que se destaca das demais",
+              "scores": {
+                "I": 5,
+                "A": 3,
+                "R": 1,
+                "D": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Ensaio exaustivamente até dominar cada aspecto da apresentação",
+              "scores": {
+                "T": 5,
+                "A": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Facilito conexões entre os participantes e crio um ambiente acolhedor",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "A equipe de marketing está desmotivada após uma campanha que não teve os resultados esperados.",
+          "desafio": "Como você reage?",
+          "opcoes": [
+            {
+              "texto": "Mobilizo e inspiro a equipe a aprender com a experiência e seguir em frente",
+              "scores": {
+                "A": 5,
+                "F": 3,
+                "I": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Ofereço suporte emocional e ajudo a remover os obstáculos que causaram o problema",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            },
+            {
+              "texto": "Analiso friamente o que deu errado e avalio o que fazer diferente",
+              "scores": {
+                "D": 5,
+                "T": 3,
+                "R": 1,
+                "I": 1,
+                "A": 1,
+                "F": 1
+              }
+            },
+            {
+              "texto": "Questiono se estávamos perseguindo os objetivos certos desde o início",
+              "scores": {
+                "R": 5,
+                "D": 3,
+                "I": 1,
+                "A": 1,
+                "F": 1,
+                "T": 1
+              }
+            }
+          ]
+        },
+        {
+          "contexto": "Você precisa coordenar um evento de lançamento para clientes e parceiros do escritório.",
+          "desafio": "Como você organiza?",
+          "opcoes": [
+            {
+              "texto": "Crio uma experiência memorável que engaja e inspira todos os participantes",
+              "scores": {
+                "A": 5,
+                "I": 3,
+                "F": 1,
+                "D": 1,
+                "R": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Desenvolvo um conceito de evento inovador que surpreende os convidados",
+              "scores": {
+                "I": 5,
+                "A": 3,
+                "R": 1,
+                "D": 1,
+                "F": 1,
+                "T": 1
+              }
+            },
+            {
+              "texto": "Coordeno todos os detalhes logísticos para garantir que tudo funcione perfeitamente",
+              "scores": {
+                "T": 5,
+                "F": 3,
+                "D": 1,
+                "R": 1,
+                "I": 1,
+                "A": 1
+              }
+            },
+            {
+              "texto": "Facilito a experiência dos participantes, garantindo que todos se sintam bem-vindos",
+              "scores": {
+                "F": 5,
+                "A": 3,
+                "T": 1,
+                "R": 1,
+                "I": 1,
+                "D": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "total_fases": 6,
+    "dilemas_por_fase": 4,
+    "total_dilemas": 24,
+    "opcoes_por_dilema": 4,
+    "talentos": [
+      "R",
+      "I",
+      "D",
+      "A",
+      "F",
+      "T"
+    ],
+    "pontuacao_maxima_por_talento": 5,
+    "pontuacao_competencia": 3,
+    "pontuacao_frustracao": 1
+  }
+}
