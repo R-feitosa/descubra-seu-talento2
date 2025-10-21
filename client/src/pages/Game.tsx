@@ -57,8 +57,18 @@ export default function Game() {
 
   // Enviar para Google Sheets quando os resultados forem carregados
   useEffect(() => {
+    console.log('[Frontend] useEffect - gameState:', gameState, 'traineeId:', traineeId, 'resultsData:', !!resultsData);
+    
     if (gameState === "results" && traineeId && resultsData) {
-      sendToSheetsMutation.mutateAsync({ traineeId }).catch(console.error);
+      console.log('[Frontend] Enviando dados para Google Sheets...');
+      
+      sendToSheetsMutation.mutateAsync({ traineeId })
+        .then((response) => {
+          console.log('[Frontend] ✅ Resposta do Google Sheets:', response);
+        })
+        .catch((error) => {
+          console.error('[Frontend] ❌ Erro ao enviar para Google Sheets:', error);
+        });
     }
   }, [gameState, traineeId, resultsData]);
 
