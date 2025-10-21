@@ -196,82 +196,97 @@ export default function Game() {
           // Página 2 - Talentos e Tendência
           {
             text: 'Seus Talentos Profissionais',
-            fontSize: 18,
+            fontSize: 20,
             bold: true,
             color: '#8B1538',
-            margin: [0, 0, 0, 10]
+            alignment: 'center',
+            margin: [0, 20, 0, 10]
           },
           {
             text: 'Com base nas suas escolhas, identificamos seus dois principais talentos:',
-            margin: [0, 0, 0, 20]
+            fontSize: 11,
+            alignment: 'center',
+            margin: [0, 0, 0, 30]
           },
           {
             columns: [
               {
                 width: '48%',
                 stack: [
-                  { text: resultsData.geniuses[0].name, fontSize: 16, bold: true, color: '#8B1538', margin: [0, 0, 0, 10] },
-                  { image: talent1Image, width: 150, alignment: 'center', margin: [0, 0, 0, 10] },
-                  { text: resultsData.geniuses[0].detailedDescription || resultsData.geniuses[0].description, alignment: 'justify' }
+                  { text: resultsData.geniuses[0].name, fontSize: 18, bold: true, color: '#8B1538', alignment: 'center', margin: [0, 0, 0, 15] },
+                  { image: talent1Image, width: 140, alignment: 'center', margin: [0, 0, 0, 15] },
+                  { text: resultsData.geniuses[0].detailedDescription || resultsData.geniuses[0].description, fontSize: 11, alignment: 'justify', lineHeight: 1.5 }
                 ]
               },
               { width: '4%', text: '' },
               {
                 width: '48%',
                 stack: [
-                  { text: resultsData.geniuses[1].name, fontSize: 16, bold: true, color: '#8B1538', margin: [0, 0, 0, 10] },
-                  { image: talent2Image, width: 150, alignment: 'center', margin: [0, 0, 0, 10] },
-                  { text: resultsData.geniuses[1].detailedDescription || resultsData.geniuses[1].description, alignment: 'justify' }
+                  { text: resultsData.geniuses[1].name, fontSize: 18, bold: true, color: '#8B1538', alignment: 'center', margin: [0, 0, 0, 15] },
+                  { image: talent2Image, width: 140, alignment: 'center', margin: [0, 0, 0, 15] },
+                  { text: resultsData.geniuses[1].detailedDescription || resultsData.geniuses[1].description, fontSize: 11, alignment: 'justify', lineHeight: 1.5 }
                 ]
               }
             ],
-            margin: [0, 0, 0, 20]
+            margin: [0, 0, 0, 30]
           },
           {
             text: 'Pontos de Melhoria',
-            fontSize: 16,
+            fontSize: 18,
             bold: true,
             color: '#8B1538',
-            margin: [0, 20, 0, 10]
+            alignment: 'center',
+            margin: [0, 0, 0, 15]
           },
           {
             text: 'Áreas que você pode desenvolver ou complementar com outros profissionais:',
+            fontSize: 11,
+            alignment: 'center',
             margin: [0, 0, 0, 10]
           },
           ...resultsData.improvements.map((imp, idx) => ({
-            text: `${idx + 1}. ${imp.name}\n${imp.description}`,
-            margin: [0, 0, 0, 8]
+            stack: [
+              { text: `${idx + 1}. ${imp.name}`, fontSize: 11, alignment: 'center', margin: [0, 5, 0, 2] },
+              { text: imp.description, fontSize: 11, alignment: 'center', margin: [0, 0, 0, 5] }
+            ]
           })),
           {
             text: 'Tendência Dominante',
-            fontSize: 16,
+            fontSize: 18,
             bold: true,
             color: '#8B1538',
+            alignment: 'center',
             margin: [0, 20, 0, 10]
           },
           {
             text: resultsData.dominantTendency,
-            fontSize: 14,
+            fontSize: 12,
             bold: true,
-            margin: [0, 0, 0, 5]
+            alignment: 'center',
+            margin: [0, 0, 0, 10]
           },
           {
             text: resultsData.tendencyDescription || '',
-            alignment: 'justify'
+            fontSize: 11,
+            alignment: 'justify',
+            lineHeight: 1.5
           },
           { text: '', pageBreak: 'after' },
 
           // Página 3 - Conselho de Carreira
           {
             text: 'Conselho de Carreira',
-            fontSize: 18,
+            fontSize: 20,
             bold: true,
             color: '#8B1538',
-            margin: [0, 0, 0, 15]
+            alignment: 'center',
+            margin: [0, 20, 0, 20]
           },
           ...resultsData.careerAdvice.split('\n\n').map(paragraph => ({
             text: paragraph,
+            fontSize: 11,
             alignment: 'justify',
+            lineHeight: 1.5,
             margin: [0, 0, 0, 12]
           }))
         ]

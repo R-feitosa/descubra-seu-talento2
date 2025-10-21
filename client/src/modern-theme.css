@@ -397,8 +397,8 @@ body {
   gap: 10px;
 }
 
-.talent-item {
-  background: var(--bg-light);
+.result-card {
+  background: white;
   border-radius: 12px;
   padding: 15px;
   margin-bottom: 12px;
