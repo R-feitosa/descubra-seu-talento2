@@ -63,10 +63,10 @@ export default function Game() {
       console.log('[Frontend] Enviando dados para Google Sheets...');
       
       sendToSheetsMutation.mutateAsync({ traineeId })
-        .then((response) => {
+        .then((response: any) => {
           console.log('[Frontend] ✅ Resposta do Google Sheets:', response);
         })
-        .catch((error) => {
+        .catch((error: any) => {
           console.error('[Frontend] ❌ Erro ao enviar para Google Sheets:', error);
         });
     }
