@@ -152,7 +152,7 @@ export default function Game() {
       // Definir documento PDF
       const docDefinition: any = {
         pageSize: 'A4',
-        pageMargins: [40, 80, 40, 80],
+        pageMargins: [70, 100, 70, 100],
         defaultStyle: {
           font: 'Roboto',
           fontSize: 11,
@@ -176,20 +176,12 @@ export default function Game() {
           }
         },
         content: [
-          // Página 1 - Capa
-          {
-            text: 'Talentos\nProfissionais',
-            fontSize: 48,
-            bold: true,
-            color: '#8B1538',
-            margin: [0, 250, 0, 0],
-            alignment: 'left'
-          },
+          // Página 1 - Capa (apenas nome do candidato)
           {
             text: name,
             fontSize: 14,
-            margin: [0, 350, 0, 0],
-            alignment: 'left'
+            absolutePosition: { x: 70, y: 750 },
+            color: '#000000'
           },
           { text: '', pageBreak: 'after' },
 
