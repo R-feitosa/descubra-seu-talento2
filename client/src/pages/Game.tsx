@@ -178,9 +178,13 @@ export default function Game() {
         content: [
           // Página 1 - Capa (apenas nome do candidato)
           {
+            text: '',
+            margin: [0, 600, 0, 0]
+          },
+          {
             text: name,
             fontSize: 14,
-            absolutePosition: { x: 70, y: 750 },
+            margin: [0, 0, 0, 0],
             color: '#000000'
           },
           { text: '', pageBreak: 'after' },
@@ -263,16 +267,15 @@ export default function Game() {
             alignment: 'justify',
             lineHeight: 1.5
           },
-          { text: '', pageBreak: 'after' },
 
-          // Página 3 - Conselho de Carreira
+          // Conselho de Carreira (mesma página)
           {
             text: 'Conselho de Carreira',
             fontSize: 20,
             bold: true,
             color: '#8B1538',
             alignment: 'center',
-            margin: [0, 20, 0, 20]
+            margin: [0, 30, 0, 20]
           },
           ...resultsData.careerAdvice.split('\n\n').map(paragraph => ({
             text: paragraph,
