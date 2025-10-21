@@ -10,12 +10,12 @@ type GameState = "menu" | "prologue" | "welcome" | "phase" | "feedback" | "resul
 
 // Mapeamento de imagens dos talentos
 const talentImages: Record<string, string> = {
-  "Reflexão": "/talento-raciocinio.png",
-  "Invenção": "/talento-invencao.png",
-  "Discernimento": "/talento-discernimento.png",
-  "Arrebatamento": "/talento-arrebatamento.png",
-  "Facilitação": "/talento-facilitacao.png",
-  "Tenacidade": "/talento-tenacidade.png",
+  "Reflexão": "/reflexao.png",
+  "Invenção": "/invencao.png",
+  "Discernimento": "/discernimento.png",
+  "Arrebatamento": "/arrebatamento.png",
+  "Facilitação": "/facilitacao.png",
+  "Tenacidade": "/tenacidade.png",
 };
 
 // Mapeamento de cenários com personagens integrados por fase
