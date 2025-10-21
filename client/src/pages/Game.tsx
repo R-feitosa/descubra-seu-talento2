@@ -59,18 +59,46 @@ export default function Game() {
   useEffect(() => {
     console.log('[Frontend] useEffect - gameState:', gameState, 'traineeId:', traineeId, 'resultsData:', !!resultsData);
     
-    if (gameState === "results" && traineeId && resultsData) {
+    if (gameState === "results" && traineeId && resultsData && name && whatsapp) {
       console.log('[Frontend] Enviando dados para Google Sheets...');
       
-      sendToSheetsMutation.mutateAsync({ traineeId })
-        .then((response: any) => {
-          console.log('[Frontend] ✅ Resposta do Google Sheets:', response);
+      // URL do Google Apps Script
+      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzm3dbqsY3jPVBFotqJr2NyV3GMTSNHqYVEo1SwqzZvG6ZvPtcu_kbdG0qCJ3MGi7WOwQ/exec';
+      
+      // Preparar dados
+      const sheetData = {
+        name: name,
+        whatsapp: whatsapp,
+        talents: [
+          { name: resultsData.talents[0]?.name || '' },
+          { name: resultsData.talents[1]?.name || '' }
+        ],
+        weaknesses: [
+          { name: resultsData.weaknesses[0]?.name || '' },
+          { name: resultsData.weaknesses[1]?.name || '' }
+        ],
+        tendency: resultsData.tendency || ''
+      };
+      
+      console.log('[Frontend] Dados a enviar:', sheetData);
+      
+      // Enviar diretamente para Google Sheets
+      fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sheetData),
+        mode: 'no-cors' // Necessário para Google Apps Script
+      })
+        .then(() => {
+          console.log('[Frontend] ✅ Dados enviados para Google Sheets com sucesso!');
         })
         .catch((error: any) => {
           console.error('[Frontend] ❌ Erro ao enviar para Google Sheets:', error);
         });
     }
-  }, [gameState, traineeId, resultsData]);
+  }, [gameState, traineeId, resultsData, name, whatsapp]);
 
   const handleStartGame = async () => {
     if (!name || !whatsapp) {
