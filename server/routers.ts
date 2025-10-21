@@ -471,7 +471,7 @@ export const appRouter = router({
         }
       }),
 
-    // Enviar resultados para Google Sheets
+    // Enviar resultados para Google Sheets (v2 - forçar rebuild)
     sendToSheets: publicProcedure
       .input(z.object({
         traineeId: z.string(),
