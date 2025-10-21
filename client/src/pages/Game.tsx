@@ -60,12 +60,13 @@ export default function Game() {
     console.log('[Frontend] useEffect - gameState:', gameState, 'traineeId:', traineeId, 'resultsData:', !!resultsData);
     
     if (gameState === "results" && traineeId && resultsData && name && whatsapp) {
+      console.log('[Frontend] resultsData completo:', JSON.stringify(resultsData, null, 2));
       console.log('[Frontend] Enviando dados para Google Sheets...');
       
       // URL do Google Apps Script
       const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzm3dbqsY3jPVBFotqJr2NyV3GMTSNHqYVEo1SwqzZvG6ZvPtcu_kbdG0qCJ3MGi7WOwQ/exec';
       
-      // Preparar dados
+      // Preparar dados no formato que o Google Apps Script espera
       const sheetData = {
         name: name,
         whatsapp: whatsapp,
