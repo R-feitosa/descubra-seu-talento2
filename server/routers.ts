@@ -93,12 +93,16 @@ export const appRouter = router({
           throw new Error("Fase não encontrada");
         }
 
+        // Selecionar apenas 3 dilemas aleatórios da fase
+        const shuffledDilemas = [...faseData.dilemas].sort(() => Math.random() - 0.5);
+        const selectedDilemas = shuffledDilemas.slice(0, 3);
+
         return {
           fase: faseData.fase,
           setor: faseData.setor,
           supervisor: faseData.supervisor,
           cenario: faseData.cenario,
-          dilemas: faseData.dilemas,
+          dilemas: selectedDilemas,
           trainee: {
             name: trainee.name,
             currentPhase: trainee.currentPhase,
